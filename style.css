@@ -42,7 +42,7 @@ body {
   overflow: hidden;
 }
 .container {
-  max-width: 700px;
+  max-width: 719px;
   margin: 0 auto;
 }
 textarea {
@@ -50,18 +50,15 @@ textarea {
   border-radius: 3px;
 }
 .keyboard {
-  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   border-radius: 5px;
   border: 2px solid rgb(100, 62, 97);
   background-color: rgb(216, 156, 201);
   padding: 5px;
 }
-/*line_1__________________________________________________line_1*/
-.line {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
+
 .key {
   display: flex;
   flex-direction: column;
@@ -79,18 +76,21 @@ textarea {
   background-color: rgb(173, 118, 160);
   cursor: pointer;
 }
+.key:active {
+  background-color: rgb(158, 173, 118);
+}
 .backspace,
 .capslock {
-  width: 100px;
+  width: 101px;
 }
 .tab {
   width: 55px;
 }
 .enter {
-  width: 87px;
+  width: 86px;
 }
 .shift_left {
-  width: 90px;
+  width: 101px;
 }
 .shift_right {
   width: 40px;
@@ -102,7 +102,7 @@ textarea {
   transform: rotate(90deg);
 }
 .space {
-  width: 252px;
+  width: 255px;
 }
 .ctrl {
   width: 65px;
