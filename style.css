@@ -76,9 +76,11 @@ textarea {
   background-color: rgb(173, 118, 160);
   cursor: pointer;
 }
-.key:active {
+.key:active,
+.key.active {
   background-color: rgb(158, 173, 118);
 }
+
 .backspace,
 .capslock {
   width: 101px;
