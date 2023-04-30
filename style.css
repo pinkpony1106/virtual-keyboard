@@ -44,7 +44,12 @@ body {
 .container {
   max-width: 719px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
 }
+
 textarea {
   border: 1px solid black;
   border-radius: 3px;
@@ -60,6 +65,7 @@ textarea {
 }
 
 .key {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -111,4 +117,19 @@ textarea {
 }
 .alt {
   width: 53px;
+}
+
+.change_lang {
+  padding: 10px;
+  margin: 45px;
+  color: #663854;
+  text-align: center;
+  width: 350px;
+}
+
+.shift_key {
+  position: absolute;
+  left: 3px;
+  bottom: 23px;
+  font-size: 12px;
 }
