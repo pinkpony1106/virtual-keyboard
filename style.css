@@ -1,0 +1,132 @@
+/*Обнуление__________________________________________________*/
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+img {
+  vertical-align: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+html,
+body {
+  height: 100%;
+  line-height: 1;
+  font-size: 16px;
+  color: #000;
+  font-family: "Gilroy", sans-serif;
+}
+/*Обнуление__________________________________________________*/
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+}
+.container {
+  max-width: 719px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+textarea {
+  border: 1px solid black;
+  border-radius: 3px;
+}
+.keyboard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  border: 2px solid rgb(100, 62, 97);
+  background-color: rgb(216, 156, 201);
+  padding: 5px;
+}
+
+.key {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgb(125, 60, 128);
+  border-radius: 5px;
+  margin: 3px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #f0eded;
+  background-color: rgb(173, 118, 160);
+  cursor: pointer;
+}
+.key:active,
+.key.active {
+  background-color: rgb(236, 131, 222);
+  border-radius: 15px;
+}
+
+.backspace,
+.capslock {
+  width: 101px;
+}
+.tab {
+  width: 55px;
+}
+.enter {
+  width: 86px;
+}
+.shift_left {
+  width: 101px;
+}
+.shift_right {
+  width: 40px;
+}
+.space {
+  width: 255px;
+}
+.ctrl {
+  width: 65px;
+}
+.alt {
+  width: 53px;
+}
+
+.change_lang {
+  padding-top: 25px;
+  color: #663854;
+  text-align: center;
+  width: 350px;
+}
+.windows {
+  color: #663854;
+  padding-top: 10px;
+}
+.shift_key {
+  position: absolute;
+  left: 3px;
+  bottom: 23px;
+  font-size: 12px;
+}
