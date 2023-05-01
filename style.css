@@ -115,13 +115,15 @@ textarea {
 }
 
 .change_lang {
-  padding: 10px;
-  margin: 45px;
+  padding-top: 25px;
   color: #663854;
   text-align: center;
   width: 350px;
 }
-
+.windows {
+  color: #663854;
+  padding-top: 10px;
+}
 .shift_key {
   position: absolute;
   left: 3px;
