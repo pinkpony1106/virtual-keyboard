@@ -423,9 +423,6 @@ function keyboardClick(e) {
 
   console.log("!", textarea.selectionStart, cursorPosition);
   if (e.target.classList.contains("key")) {
-    if (e.target.classList.contains("space")) {
-      textarea.value += " ";
-    }
     if (e.target.classList.contains("content")) {
       const getContent = e.target.childNodes[0].nodeValue;
       if (isEnd) {
