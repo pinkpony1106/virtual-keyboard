@@ -362,7 +362,7 @@ const keyboardKeys = [
     valueRusUppercase: "Ю",
   },
   { value: "/", code: "Slash", class: "key content symbol", valueRus: "." },
-  { value: ">", code: "ArrowUp", class: "key arrow_top" },
+  { value: "↑", code: "ArrowUp", class: "key arrow_top" },
   {
     value: "Shift",
     code: "ShiftRight",
@@ -375,9 +375,9 @@ const keyboardKeys = [
   { value: "", code: "Space", class: "key space" },
   { value: "Alt", code: "AltRight", class: "key alt" },
   { value: "Ctrl", code: "ControlRight", class: "key ctrl" },
-  { value: "<", code: "ArrowLeft", class: "key arrow_left" },
-  { value: ">", code: "ArrowDown", class: "key arrow_bottom" },
-  { value: ">", code: "ArrowRight", class: "key arrow_right" },
+  { value: "←", code: "ArrowLeft", class: "key arrow_left" },
+  { value: "↓", code: "ArrowDown", class: "key arrow_bottom" },
+  { value: "→", code: "ArrowRight", class: "key arrow_right" },
 ];
 
 const keyboard = document.querySelector(".keyboard");
@@ -468,6 +468,78 @@ function keyboardClick(e) {
         textarea.selectionStart =
           textarea.selectionStart - slicedElement.length;
         textarea.selectionEnd = textarea.selectionEnd - slicedElement.length;
+      }
+    }
+    if (e.target.classList.contains("space")) {
+      if (isEnd) {
+        textarea.value += " ";
+      } else if (textarea.selectionStart !== 0) {
+        textarea.value =
+          textarea.value.slice(0, textarea.selectionStart) +
+          " " +
+          textarea.value.slice(textarea.selectionStart);
+        textarea.selectionStart = cursorPosition + 1;
+        textarea.selectionEnd = cursorPosition + 1;
+      }
+    }
+    if (e.target.classList.contains("tab")) {
+      if (isEnd) {
+        textarea.value += "  ";
+      } else if (textarea.selectionStart !== 0) {
+        textarea.value =
+          textarea.value.slice(0, textarea.selectionStart) +
+          "  " +
+          textarea.value.slice(textarea.selectionStart);
+        textarea.selectionStart = cursorPosition + 2;
+        textarea.selectionEnd = cursorPosition + 2;
+      }
+    }
+    if (e.target.classList.contains("arrow_top")) {
+      if (isEnd) {
+        textarea.value += "↑";
+      } else {
+        textarea.value =
+          textarea.value.slice(0, textarea.selectionStart) +
+          "↑" +
+          textarea.value.slice(textarea.selectionStart);
+        textarea.selectionStart = cursorPosition + 1;
+        textarea.selectionEnd = cursorPosition + 1;
+      }
+    }
+    if (e.target.classList.contains("arrow_bottom")) {
+      if (isEnd) {
+        textarea.value += "↓";
+      } else {
+        textarea.value =
+          textarea.value.slice(0, textarea.selectionStart) +
+          "↓" +
+          textarea.value.slice(textarea.selectionStart);
+        textarea.selectionStart = cursorPosition + 1;
+        textarea.selectionEnd = cursorPosition + 1;
+      }
+    }
+    if (e.target.classList.contains("arrow_left")) {
+      if (isEnd) {
+        textarea.value += "←";
+      } else {
+        textarea.value =
+          textarea.value.slice(0, textarea.selectionStart) +
+          "←" +
+          textarea.value.slice(textarea.selectionStart);
+        textarea.selectionStart = cursorPosition + 1;
+        textarea.selectionEnd = cursorPosition + 1;
+      }
+    }
+    if (e.target.classList.contains("arrow_right")) {
+      if (isEnd) {
+        textarea.value += "→";
+      } else {
+        textarea.value =
+          textarea.value.slice(0, textarea.selectionStart) +
+          "→" +
+          textarea.value.slice(textarea.selectionStart);
+        textarea.selectionStart = cursorPosition + 1;
+        textarea.selectionEnd = cursorPosition + 1;
       }
     }
   } else {
