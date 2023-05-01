@@ -459,6 +459,20 @@ function keyboardClick(e) {
         textarea.selectionEnd = cursorPosition;
       }
     }
+    if (e.target.classList.contains("enter")) {
+      if (isEnd) {
+        textarea.value = textarea.value + "\r\n";
+      } else if (textarea.selectionStart !== 0) {
+        let slicedElement = textarea.value.slice(textarea.selectionStart);
+        textarea.value =
+          textarea.value.slice(0, textarea.selectionStart) +
+          "\r\n" +
+          slicedElement;
+        textarea.selectionStart =
+          textarea.selectionStart - slicedElement.length;
+        textarea.selectionEnd = textarea.selectionEnd - slicedElement.length;
+      }
+    }
   } else {
     return;
   }
